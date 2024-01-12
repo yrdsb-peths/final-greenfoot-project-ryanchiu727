@@ -23,5 +23,11 @@ public class Projectile extends SpaceObjects
             getWorld().addObject(new Debris(), getX(), getY()); 
             getWorld().removeObject(this);
         }
+        Actor debris = getOneIntersectingObject(Debris.class);
+        if (debris != null)
+        {
+            getWorld().removeObject(debris);
+            getWorld().removeObject(this);
+        }
     }
 }
