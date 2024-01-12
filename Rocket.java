@@ -23,6 +23,7 @@ public class Rocket extends SpaceObjects
         turnCommand();
         moveOnCommand();
         setLocation(getX() + horizontalSpeed, getY() + verticalSpeed);
+        wrapAtEdge();
     }
     public void turnCommand()
     {
@@ -63,6 +64,44 @@ public class Rocket extends SpaceObjects
             {
                 verticalSpeed--;
             }
+        }
+    }
+    public void wrapAtEdge()
+    {
+        if (getX() == 0)
+        {
+            setLocation(898, getY());
+        }
+        if (getY() == 0)
+        {
+            setLocation(getX(), 648);
+        }
+        if (getX() == 899)
+        {
+            setLocation(1, getY());
+        }
+        if (getY() == 649)
+        {
+            setLocation(getX(), 649);
+        }
+    }
+    public void bounceAtEdge()
+    {
+                if (getX() == 0)
+        {
+            horizontalSpeed = -horizontalSpeed;
+        }
+        if (getY() == 0)
+        {
+            setLocation(getX(), 648);
+        }
+        if (getX() == 899)
+        {
+            horizontalSpeed = -horizontalSpeed;
+        }
+        if (getY() == 649)
+        {
+            setLocation(getX(), 649);
         }
     }
 }
