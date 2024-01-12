@@ -23,6 +23,9 @@ public class Projectile extends SpaceObjects
             getWorld().removeObject(rocks);
             getWorld().addObject(new Debris(), getX(), getY());
             getWorld().addObject(new Debris(), getX(), getY()); 
+            MyWorld myWorld = (MyWorld)getWorld();
+            Counter counter = myWorld.getCounter();
+            counter.addScore();
             getWorld().removeObject(this);
         }
         
@@ -31,12 +34,18 @@ public class Projectile extends SpaceObjects
             getWorld().removeObject(debris);
             getWorld().addObject(new Debris2(), getX(), getY());
             getWorld().addObject(new Debris2(), getX(), getY());
+            getWorld().addObject(new Debris2(), getX(), getY());
+            MyWorld myWorld = (MyWorld)getWorld();
+            Counter counter = myWorld.getCounter();
+            counter.addScore();
             getWorld().removeObject(this);
         }
         else if (debris2 != null)
         {
             getWorld().removeObject(debris2);
-            
+            MyWorld myWorld = (MyWorld)getWorld();
+            Counter counter = myWorld.getCounter();
+            counter.addScore();
             
             getWorld().removeObject(this);
         }
