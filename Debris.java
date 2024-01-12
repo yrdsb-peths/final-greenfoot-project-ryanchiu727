@@ -22,5 +22,6 @@ public class Debris extends SpaceObjects
     public void act()
     {
         move(3);
+        wrapAtEdge();
     }
 }

@@ -29,5 +29,6 @@ public class Rocks extends SpaceObjects
     public void act()
     {
         setLocation(getX() + horizontalSpeed, getY() + verticalSpeed);
+        wrapAtEdge();
     }
 }

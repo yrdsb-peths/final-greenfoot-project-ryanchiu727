@@ -70,25 +70,6 @@ public class Rocket extends SpaceObjects
             }
         }
     }
-    public void wrapAtEdge()
-    {
-        if (getX() == 0)
-        {
-            setLocation(898, getY());
-        }
-        if (getY() == 0)
-        {
-            setLocation(getX(), 648);
-        }
-        if (getX() == 899)
-        {
-            setLocation(1, getY());
-        }
-        if (getY() == 649)
-        {
-            setLocation(getX(), 649);
-        }
-    }
     public void bounceAtEdge()
     {
                 if (getX() == 0)

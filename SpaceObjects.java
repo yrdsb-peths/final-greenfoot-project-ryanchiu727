@@ -16,4 +16,23 @@ public class SpaceObjects extends Actor
     {
         // Add your action code here.
     }
+    public void wrapAtEdge()
+    {
+        if (getX() == 0)
+        {
+            setLocation(898, getY());
+        }
+        if (getY() == 0)
+        {
+            setLocation(getX(), 648);
+        }
+        if (getX() == 899)
+        {
+            setLocation(1, getY());
+        }
+        if (getY() == 649)
+        {
+            setLocation(getX(), 649);
+        }
+    }
 }
