@@ -17,6 +17,7 @@ public class Projectile extends SpaceObjects
         move(10);
         Actor rocks = getOneIntersectingObject(Rocks.class);
         Actor debris = getOneIntersectingObject(Debris.class);
+        Actor debris2 = getOneIntersectingObject(Debris.class);
         if (rocks != null)
         {
             getWorld().removeObject(rocks);
@@ -28,6 +29,15 @@ public class Projectile extends SpaceObjects
         else if (debris != null)
         {
             getWorld().removeObject(debris);
+            getWorld().addObject(new Debris2(), getX(), getY());
+            getWorld().addObject(new Debris2(), getX(), getY());
+            getWorld().removeObject(this);
+        }
+        else if (debris2 != null)
+        {
+            getWorld().removeObject(debris2);
+            
+            
             getWorld().removeObject(this);
         }
         
