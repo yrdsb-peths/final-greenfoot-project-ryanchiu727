@@ -14,6 +14,8 @@ public class Rocket extends SpaceObjects
      */
     int horizontalSpeed = 0;
     int verticalSpeed = 0;
+    boolean fired = false;
+    
     public Rocket()
     {
         getImage().scale(getImage().getWidth()/2,getImage().getHeight()/2);
@@ -22,8 +24,10 @@ public class Rocket extends SpaceObjects
     {
         turnCommand();
         moveOnCommand();
-        setLocation(getX() + horizontalSpeed, getY() + verticalSpeed);
-        wrapAtEdge();
+        setLocation(getX() + horizontalSpeed/2, getY() + verticalSpeed/2);
+        //wrapAtEdge();
+        bounceAtEdge();
+        shootOnCommand();
     }
     public void turnCommand()
     {
@@ -93,7 +97,7 @@ public class Rocket extends SpaceObjects
         }
         if (getY() == 0)
         {
-            setLocation(getX(), 648);
+            verticalSpeed = -verticalSpeed;
         }
         if (getX() == 899)
         {
@@ -101,7 +105,21 @@ public class Rocket extends SpaceObjects
         }
         if (getY() == 649)
         {
-            setLocation(getX(), 649);
+            verticalSpeed = -verticalSpeed;
+        }
+    }
+    public void shootOnCommand()
+    {
+        Projectile projectile = new Projectile();
+        if (Greenfoot.isKeyDown("f") && fired == false)
+        {
+            getWorld().addObject(projectile, getX(), getY());
+            projectile.setRotation(getRotation());
+            fired = true;
+        }
+        if (!Greenfoot.isKeyDown("f"))
+        {
+            fired = false;
         }
     }
 }
