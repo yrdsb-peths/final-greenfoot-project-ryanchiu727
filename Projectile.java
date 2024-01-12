@@ -14,7 +14,7 @@ public class Projectile extends SpaceObjects
      */
     public void act()
     {
-        move(10);
+        move(8);
         Actor rocks = getOneIntersectingObject(Rocks.class);
         Actor debris = getOneIntersectingObject(Debris.class);
         Actor debris2 = getOneIntersectingObject(Debris.class);
@@ -32,7 +32,6 @@ public class Projectile extends SpaceObjects
         else if (debris != null)
         {
             getWorld().removeObject(debris);
-            getWorld().addObject(new Debris2(), getX(), getY());
             getWorld().addObject(new Debris2(), getX(), getY());
             getWorld().addObject(new Debris2(), getX(), getY());
             MyWorld myWorld = (MyWorld)getWorld();
