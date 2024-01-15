@@ -15,7 +15,6 @@ public class Rocket extends SpaceObjects
     int horizontalSpeed = 0;
     int verticalSpeed = 0;
     boolean fired = false;
-    
     public Rocket()
     {
         getImage().scale(getImage().getWidth()/2,getImage().getHeight()/2);
@@ -23,7 +22,7 @@ public class Rocket extends SpaceObjects
     public void act()
     {
         turnCommand();
-        moveOnCommand();
+        //moveOnCommand();
         setLocation(getX() + horizontalSpeed/2, getY() + verticalSpeed/2);
         //wrapAtEdge();
         bounceAtEdge();
@@ -34,18 +33,22 @@ public class Rocket extends SpaceObjects
         if (Greenfoot.isKeyDown("up"))
         {
             setRotation(270);
+            move(3);
         }
         if (Greenfoot.isKeyDown("right"))
         {
             setRotation(0);
+            move(3);
         }
                 if (Greenfoot.isKeyDown("left"))
         {
             setRotation(180);
+            move(3);
         }
                 if (Greenfoot.isKeyDown("down"))
         {
             setRotation(90);
+            move(3);
         }
     }
     public void moveOnCommand()

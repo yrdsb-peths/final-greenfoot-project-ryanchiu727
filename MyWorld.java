@@ -39,6 +39,12 @@ public class MyWorld extends World
         addObject(rocks3, Greenfoot.getRandomNumber(900), Greenfoot.getRandomNumber(650));
         Rocks rocks4= new Rocks();
         addObject(rocks4, Greenfoot.getRandomNumber(900), Greenfoot.getRandomNumber(650));
+        Rocks rocks5= new Rocks();
+        addObject(rocks5, Greenfoot.getRandomNumber(900), Greenfoot.getRandomNumber(650));
+        Rocks rocks6= new Rocks();
+        addObject(rocks6, Greenfoot.getRandomNumber(900), Greenfoot.getRandomNumber(650));
+        Rocks rocks7= new Rocks();
+        addObject(rocks7, Greenfoot.getRandomNumber(900), Greenfoot.getRandomNumber(650));
         addObject(counter,75,40);
         
     }

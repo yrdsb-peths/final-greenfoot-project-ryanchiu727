@@ -32,8 +32,6 @@ public class Projectile extends SpaceObjects
         else if (debris != null)
         {
             getWorld().removeObject(debris);
-            getWorld().addObject(new Debris2(), getX(), getY());
-            getWorld().addObject(new Debris2(), getX(), getY());
             MyWorld myWorld = (MyWorld)getWorld();
             Counter counter = myWorld.getCounter();
             counter.addScore();
