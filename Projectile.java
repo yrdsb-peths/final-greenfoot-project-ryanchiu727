@@ -14,7 +14,7 @@ public class Projectile extends SpaceObjects
      */
     public void act()
     {
-        move(8);
+        move(10);
         Actor rocks = getOneIntersectingObject(Rocks.class);
         Actor debris = getOneIntersectingObject(Debris.class);
         Actor debris2 = getOneIntersectingObject(Debris.class);
@@ -22,7 +22,9 @@ public class Projectile extends SpaceObjects
         {
             getWorld().removeObject(rocks);
             getWorld().addObject(new Debris(), getX(), getY());
-            getWorld().addObject(new Debris(), getX(), getY()); 
+            getWorld().addObject(new Debris(), getX(), getY());
+            getWorld().addObject(new Debris(), getX(), getY());
+            getWorld().addObject(new Debris(), getX(), getY());
             MyWorld myWorld = (MyWorld)getWorld();
             Counter counter = myWorld.getCounter();
             counter.addScore();
@@ -35,17 +37,10 @@ public class Projectile extends SpaceObjects
             MyWorld myWorld = (MyWorld)getWorld();
             Counter counter = myWorld.getCounter();
             counter.addScore();
-            getWorld().removeObject(this);
-        }
-        else if (debris2 != null)
-        {
-            getWorld().removeObject(debris2);
-            MyWorld myWorld = (MyWorld)getWorld();
-            Counter counter = myWorld.getCounter();
             counter.addScore();
             getWorld().removeObject(this);
         }
-        
+
         else if (getX() == 0)
         {
             getWorld().removeObject(this);
@@ -56,12 +51,12 @@ public class Projectile extends SpaceObjects
             getWorld().removeObject(this);
         }
         
-        else if (getX() == 899)
+        else if (getX() == 1199)
         {
             getWorld().removeObject(this);
         }
         
-        else if (getY() == 649)
+        else if (getY() == 899)
         {
             getWorld().removeObject(this);
         }

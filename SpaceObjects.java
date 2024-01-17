@@ -20,19 +20,19 @@ public class SpaceObjects extends Actor
     {
         if (getX() == 0)
         {
-            setLocation(898, getY());
+            setLocation(1198, getY());
         }
         if (getY() == 0)
         {
-            setLocation(getX(), 648);
+            setLocation(getX(), 898);
         }
-        if (getX() == 899)
+        if (getX() == 1199)
         {
             setLocation(1, getY());
         }
-        if (getY() == 649)
+        if (getY() == 899)
         {
-            setLocation(getX(), 649);
+            setLocation(getX(), 899);
         }
     }
 }

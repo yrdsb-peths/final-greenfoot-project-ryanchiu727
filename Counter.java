@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Counter extends SpaceObjects
+public class Counter extends Actor
 {
     /**
      * Act - do whatever the Counter wants to do. This method is called whenever
@@ -20,6 +20,14 @@ public class Counter extends SpaceObjects
     public void act()
     {
         setImage(new GreenfootImage("Score: " + score, 40, Color.BLUE, Color.WHITE));
+        YouWin();
+    }
+    public void YouWin()
+    {
+        if (score ==50)
+        {
+            getWorld().addObject(new YouWin(), 600, 450);
+        }
     }
     public void addScore()
     {
