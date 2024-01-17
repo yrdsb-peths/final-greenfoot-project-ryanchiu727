@@ -15,11 +15,11 @@ public class Counter extends SpaceObjects
     int score = 0;
     public Counter()
     {
-        setImage(new GreenfootImage("Score: " + score, 40, Color.RED, Color.WHITE));
+       setImage(new GreenfootImage("Score: " + score, 40, Color.BLUE, Color.WHITE));
     }
     public void act()
     {
-        // Add your action code here.
+        setImage(new GreenfootImage("Score: " + score, 40, Color.BLUE, Color.WHITE));
     }
     public void addScore()
     {

@@ -43,7 +43,6 @@ public class Projectile extends SpaceObjects
             MyWorld myWorld = (MyWorld)getWorld();
             Counter counter = myWorld.getCounter();
             counter.addScore();
-            
             getWorld().removeObject(this);
         }
         
