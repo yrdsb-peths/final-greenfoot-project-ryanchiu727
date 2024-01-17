@@ -24,7 +24,7 @@ public class Counter extends Actor
     }
     public void YouWin()
     {
-        if (score ==50)
+        if (score ==30)
         {
             getWorld().addObject(new YouWin(), 600, 450);
         }

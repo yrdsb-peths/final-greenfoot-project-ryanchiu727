@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Rocks extends SpaceObjects
+public class Rocks extends AllRocks
 {
     int horizontalSpeed = Greenfoot.getRandomNumber(5) +1;
     int verticalSpeed = Greenfoot.getRandomNumber(5) + 1;
@@ -20,7 +20,6 @@ public class Rocks extends SpaceObjects
         {
             horizontalSpeed= -horizontalSpeed;
         }
-        
         if (Greenfoot.getRandomNumber(2) == 1)
         {
             verticalSpeed= -verticalSpeed;

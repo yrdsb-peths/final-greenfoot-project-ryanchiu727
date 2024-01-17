@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Debris extends SpaceObjects
+public class Debris extends AllRocks
 {
     /**
      * Act - do whatever the Debris wants to do. This method is called whenever
@@ -21,7 +21,7 @@ public class Debris extends SpaceObjects
     }
     public void act()
     {
-        move(5);
+        move(7);
         wrapAtEdge();
     }
 }

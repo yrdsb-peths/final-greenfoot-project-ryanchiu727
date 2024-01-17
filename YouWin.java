@@ -14,7 +14,8 @@ public class YouWin extends Actor
      */
     public YouWin()
     {
-        setImage(new GreenfootImage("YOU WIN!!!", 120, Color.GREEN, Color.BLACK));
+        setImage(new GreenfootImage("YOU WIN!!!", 150, Color.GREEN, Color.WHITE));
+        Greenfoot.stop();
     }
     public void act() 
     {

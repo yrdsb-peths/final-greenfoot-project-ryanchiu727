@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     Counter counter = new Counter();
+    HealthBar healthBar = new HealthBar();
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -23,6 +24,10 @@ public class MyWorld extends World
     {
         return counter;
     }
+    public HealthBar getHealthBar()
+    {
+        return healthBar;
+    }
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -30,7 +35,7 @@ public class MyWorld extends World
     private void prepare()
     {
         Rocket rocket = new Rocket();
-        addObject(rocket,450,325);
+        addObject(rocket,600,450);
         Rocks rocks = new Rocks();
         addObject(rocks, Greenfoot.getRandomNumber(1200), Greenfoot.getRandomNumber(900));
         Rocks rocks2 = new Rocks();
@@ -52,5 +57,8 @@ public class MyWorld extends World
         Rocks rocks10 = new Rocks();
         addObject(rocks10, Greenfoot.getRandomNumber(1200), Greenfoot.getRandomNumber(900));
         addObject(counter,75,40);
+        
+        
+        addObject(healthBar,600,45);
     }
 }

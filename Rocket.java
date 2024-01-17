@@ -15,6 +15,7 @@ public class Rocket extends SpaceObjects
     int horizontalSpeed = 0;
     int verticalSpeed = 0;
     boolean fired = false;
+    boolean hitRock = false;
     public Rocket()
     {
         getImage().scale(getImage().getWidth()/2,getImage().getHeight()/2);
@@ -22,33 +23,30 @@ public class Rocket extends SpaceObjects
     public void act()
     {
         turnCommand();
-        //moveOnCommand();
+        moveOnCommand();
         setLocation(getX() + horizontalSpeed/2, getY() + verticalSpeed/2);
         //wrapAtEdge();
         bounceAtEdge();
         shootOnCommand();
+        hitRocks();
     }
     public void turnCommand()
     {
         if (Greenfoot.isKeyDown("up"))
         {
             setRotation(270);
-            move(4);
         }
         if (Greenfoot.isKeyDown("right"))
         {
             setRotation(0);
-            move(4);
         }
                 if (Greenfoot.isKeyDown("left"))
         {
             setRotation(180);
-            move(4);
         }
                 if (Greenfoot.isKeyDown("down"))
         {
             setRotation(90);
-            move(4);
         }
     }
     public void moveOnCommand()
@@ -104,6 +102,20 @@ public class Rocket extends SpaceObjects
         if (!Greenfoot.isKeyDown("f"))
         {
             fired = false;
+        }
+    }
+    public void hitRocks()
+    {
+        if(isTouching(AllRocks.class)&& hitRock == false)
+        {
+            MyWorld myWorld = (MyWorld)getWorld();
+            HealthBar healthbar = myWorld.getHealthBar();
+            healthbar.health--;
+            hitRock = true;
+        }
+        else if (!isTouching(AllRocks.class))
+        {
+            hitRock = false;
         }
     }
 }
